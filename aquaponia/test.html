@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the date and time as a string, formatted as a JSON date.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+<br>
+<p id="demo2"></p>
+<br>
+<p id="demo3"></p>
+<br>
+<p id="demo4"></p>
+<br>
+<p id="demo5"></p>
+<br>
+<p id="demo6"></p>
+<br>
+<p id="demo7"></p>
+<br>
+<p id="demo8"></p>
+<br>
+<p id="demo9"></p>
+<br>
+<p id="demo10"></p>
+<br>
+
+<script>
+
+function myFunction(){
+	var date = new Date();
+	var date2 = new Date();
+	var demo= document.getElementById("demo");
+	var demo2= document.getElementById("demo2");
+	var demo3= document.getElementById("demo3");
+	var demo4= document.getElementById("demo4");
+	var demo5= document.getElementById("demo5");
+	var demo6= document.getElementById("demo6");
+	var demo7= document.getElementById("demo7");
+	var demo8= document.getElementById("demo8");
+	var demo9= document.getElementById("demo9");
+	var demo10= document.getElementById("demo10");
+
+	demo.innerHTML = date;
+	demo2.innerHTML = javaScriptToJsonDate(date);
+
+	date = demo2.innerHTML;
+	date = jsonToJavaScriptDate(date);
+	demo3.innerHTML = date;
+
+	demo4.innerHTML = verValorPrimitivoDateJavaScript(date);
+
+	demo5.innerHTML = compararDatas(date, date2);
+
+	demo6.innerHTML = hoursAdd(date,3);
+
+	date = hoursAdd(date,4);
+	demo7.innerHTML = date;
+
+	demo8.innerHTML = dateToString(date);
+	date = demo8.innerHTML;
+
+}
+
+function javaScriptToJsonDate(date){
+	return date.toJSON();
+}
+
+function jsonToJavaScriptDate(d){
+	var date = new Date(d);
+	return date;
+}
+
+function compararDatas(date1, date2){
+	var b = date1.getTime() === date2.getTime();
+	if(b) return b;
+	console.log("!");
+	return b;
+}
+
+function verValorPrimitivoDateJavaScript(date){
+	return date.valueOf();
+}
+
+function hoursAdd(d, h){
+	date = new Date(d);
+	var a = date.getHours() + h;
+	date.setHours(a); //setHours() referencia ao ponteiro da memoria.
+	return date;
+}
+
+function dateToString(d){
+	date = new Date(d);
+	var DataHora = date.toLocaleString(); //date.toLocaleTimeString() + " - " + date.toLocaleDateString();
+	return DataHora;
+}
+
+/*
+var date1 = new Date(Date.UTC(96, 1, 2, 3, 4, 5));
+
+console.log(date1.valueOf());
+// expected output: 823230245000
+
+var date2 = new Date('02 Feb 1996 03:04:05 GMT');
+
+console.log(date2.valueOf());
+// expected output: 823230245000
+*/
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+[
+	{
+		"ph": 7.0,
+		"amonia": 1,
+		"nitrato": 40,
+		"nitrito": 0.25,
+		"temperatura": 27,
+		"oxigenio": 0.5,
+		"gh": 10,
+		"date": "2018-08-27T06:34:17.985Z"
+	},
+	{
+		"ph": 7.0,
+		"amonia": 0.5,
+		"nitrato": 39,
+		"nitrito": 0.5,
+		"temperatura": 30,
+		"oxigenio": 1,
+		"gh": 7,
+		"date": "2018-08-27T12:39:09.625Z"
+	},
+	{
+		"ph": 7.0,
+		"amonia": 0.25,
+		"nitrato": 38,
+		"nitrito": 1,
+		"temperatura": 10,
+		"oxigenio": 2,
+		"gh": 8,
+		"date": "2018-08-27T21:39:09.625Z"
+	},
+	{
+		"ph": 7.0,
+		"amonia": 2,
+		"nitrato": 36.5,
+		"nitrito": 2,
+		"temperatura": 5,
+		"oxigenio": 5,
+		"gh": 0,
+		"date": "2018-08-27T06:34:17.985Z"
+	},
+	{
+		"ph": 7.0,
+		"amonia": 1,
+		"nitrato": 39,
+		"nitrito": 0,
+		"temperatura": 11,
+		"oxigenio": 4,
+		"gh": 5,
+		"date": "2018-08-27T06:34:17.985Z"
+	}
+
+]

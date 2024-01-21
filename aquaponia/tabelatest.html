@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>aquaponia</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+
+		<style type="text/css">
+			.green{
+		    	background-color: LightGreen;
+		    	color: white;		    	
+			}
+			.red{
+		    	background-color: red;
+		    	color: white;		    	
+			}
+			.yellow{
+				background-color: yellow;
+		    	color: black;		    
+			}
+
+			.mystyle {
+				width: 100%;
+				padding: 25px;
+				background-color: coral;
+				color: white;
+				font-size: 25px;
+				box-sizing: border-box;
+			}
+
+		</style>		
+	</head>
+
+	<body>
+
+		<ul id="notificacoesAgua"></ul>
+
+					<table id="tabelaMonitorQualidadeAgua">
+					<thead>						
+						<tr>						
+							<th>PH </th>
+							<th>Amonia </th>
+							<th>Nitrato </th>
+							<th>Nitrito </th>
+							<th>Temperatura </th>
+							<th>Oxigenio </th>
+							<th>GH -Dureza </th>
+							<th>Data </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>7.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>3</td>
+							<td>2018-08-27T06:34:17.985Z</td>
+						</tr>
+						<tr>
+							<td>6.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>2</td>
+							<td>2018-08-27T12:39:09.625Z</td>
+						</tr>
+						<tr>
+							<td>5.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>1</td>
+							<td>2018-08-27T21:39:09.625Z</td>
+						</tr>
+						<tr>
+							<td>4.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>3</td>
+							<td>2018-08-27T06:34:17.985Z</td>
+						</tr>
+						<tr>
+							<td>3.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>2</td>
+							<td>2018-08-27T12:39:09.625Z</td>
+						</tr>
+						<tr>
+							<td>2.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>1</td>
+							<td>2018-08-27T21:39:09.625Z</td>
+						</tr>
+						<tr>
+							<td>1.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>3</td>
+							<td>2018-08-27T06:34:17.985Z</td>
+						</tr>
+						<tr>
+							<td>0.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>2</td>
+							<td>2018-08-27T12:39:09.625Z</td>
+						</tr>
+						<tr>
+							<td>7.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>1</td>
+							<td>2018-08-27T21:39:09.625Z</td>
+						</tr>
+						<tr>
+							<td>7.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>3</td>
+							<td>2018-08-27T06:34:17.985Z</td>
+						</tr>
+						<tr>
+							<td>7.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>2</td>
+							<td>2018-08-27T12:39:09.625Z</td>
+						</tr>
+						<tr>
+							<td>7.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>1</td>
+							<td>2018-08-27T21:39:09.625Z</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+	</body>
+	<script type="text/javascript">
+		console.log("!");		
+
+		function compararDoisNumerosEntreAsLinhasNa(tabela, maiorNumero, menorNumero,colunaAtual,alertaVariacao){
+			
+			qdyLinhasTabela = tabela.rows.length;
+			listaResultados = [];	
+
+			for(var linhaAtual = 1; linhaAtual < qdyLinhasTabela; linhaAtual++){
+				linha = tabela.rows[linhaAtual].cells[colunaAtual];				
+				valorAtualTabela = tabela.rows[linhaAtual].cells[colunaAtual].innerHTML;
+
+				intervaloEhMaiorIgualOuMenorIgual = valorAtualTabela >= maiorNumero || valorAtualTabela <= menorNumero;
+				if(intervaloEhMaiorIgualOuMenorIgual){
+					linha.classList.add('red');
+					listaResultados.push(valorAtualTabela);
+				} 			
+				else linha.classList.add('green');
+			}
+			//console.log(listaResultados);
+			return listaResultados;
+		}
+
+		function montarLi(t){
+			li.appendChild(t);
+			return li;
+		}
+
+		//fazer uma lista informando todos os erros 
+
+		function altertaDeVariacoesBruscasNa(tabela, coluna, variacao, intervaloHorasMaxima){
+			var qdyLinhasTabela = tabela.rows.length;
+			listaResultados = [];
+			//for(var linhaAtual=qdyLinhasTabela; linhaAtual > 1; linhaAtual-- ){			
+			for(var linhaAtual=1; linhaAtual < qdyLinhasTabela; linhaAtual++ ){
+				tdAtual = tabela.rows[linhaAtual].cells[coluna];
+				valorAtual = tabela.rows[linhaAtual].cells[coluna].innerHTML;
+				linhaAnterior = linhaAtual;
+				if(linhaAtual > 1) linhaAnterior = linhaAtual - 1;
+				valorAnterior = tabela.rows[linhaAnterior].cells[coluna].innerHTML;
+				valorAnteriorMax = parseFloat(valorAnterior) + parseFloat(variacao);
+				valorAnteriorMin = parseFloat(valorAnterior) - parseFloat(variacao);
+
+				dataAtual = tabela.rows[linhaAtual].cells[7].innerHTML;
+				dataAnterior = tabela.rows[linhaAnterior].cells[7].innerHTML;
+				//dataMin
+				//dataMax
+
+				var contemClasse = tdAtual.classList.contains('red');
+				if(contemClasse) continue;
+				contemClasse = tdAtual.classList.contains('green');				
+				if(contemClasse){
+					valorAnteriorMaiorOuMenorQueVariacaoMaisValorAtual = valorAtual > valorAnteriorMax || valorAtual < valorAnteriorMin;					
+					//dataEhValida = dataAtual.getDate() > dataAnterior.getDate()+ intervaloHorasMaxima;
+					if(valorAnteriorMaiorOuMenorQueVariacaoMaisValorAtual)
+					{
+						tdAtual.classList.add('yellow');
+						listaResultados.push(valorAtual);				
+					}
+				}
+			}
+			return listaResultados;
+		}		 
+
+		function montarLi(listaResultados, tabela, classe, colunaAtual){
+			titulo = tabela.rows[0].cells[colunaAtual].innerHTML;
+			texto = titulo + " :";
+
+			listaResultados.forEach(function(item, index){								
+				if(index > 0 ) texto = texto + " , " + item;	
+				else texto = texto + " " + item;			
+			});
+
+			li = document.createElement('li');
+			li.classList.add(classe);
+
+			qualClasse = li.classList.contains('red');  
+			if (qualClasse) texto = texto + ". " + titulo + " esta com valores muitos anormais. Tome medidas corretivas o quanto antes.";
+			qualClasse = li.classList.contains('yellow');
+			if (qualClasse) texto = texto + ". " + titulo + " sofreu variacao muito brusca. Cuidado, isso pode desestabilizar o sistema.";
+			
+			t = document.createTextNode(texto);
+			li.appendChild(t);
+			
+			document.querySelector("#notificacoesAgua").appendChild(li);
+			console.log(li);
+		}
+
+		maiorNumero = parseFloat(7.5);
+		menorNumero = parseFloat(6.5);
+		colunaAtual = 0;
+
+		variacaoMaximaIdeal = 2;
+		intervaloHoras = 48; 
+
+		tabela = document.querySelector('table');
+
+		resultado =compararDoisNumerosEntreAsLinhasNa(tabela, maiorNumero, menorNumero, colunaAtual);
+		if(resultado.length > 0) montarLi(resultado, tabela, 'red', colunaAtual);
+
+		//console.log(resultado);
+
+		resultado = altertaDeVariacoesBruscasNa(tabela, colunaAtual,variacaoMaximaIdeal,intervaloHoras);
+		if(resultado.length > 0) montarLi(resultado,tabela, 'yellow', colunaAtual);
+
+		maiorNumero = 2;
+		menorNumero = 0;
+		colunaAtual = 1;
+		resultado = compararDoisNumerosEntreAsLinhasNa(tabela, maiorNumero, menorNumero, colunaAtual);		
+
+	</script>
+</html>

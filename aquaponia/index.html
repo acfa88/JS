@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>aquaponia</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">		
+		
+	</head>
+	<body>		
+		<header>
+			<div class="container">
+				<h1 class="titulo">Aquaponia</h1>
+			</div>
+		</header>
+		<main>
+
+			<section class="container">
+				<h2>Resumo reservatorio</h2>
+			</section>
+
+			<section class="container">
+				<h2>Qualidade da agua</h2>
+
+				<div id="graficoDagua"></div>
+
+				<table>
+					<tr>
+						<td><input type="radio" name="chartRadio" class="radioWater" checked id="" onchange="carregar()" /></td>
+						<td><input type="radio" name="chartRadio" class="radioWater" id="" onchange="carregar()"/></td>
+						<td><input type="radio" name="chartRadio" class="radioWater"  id="" onchange="carregar()"/></td>
+						<td><input type="radio" name="chartRadio" class="radioWater"  id="" onchange="carregar()"/></td>
+						<td><input type="radio" name="chartRadio" class="radioWater"  id=""/onchange="carregar()" ></td>
+						<td><input type="radio" name="chartRadio" class="radioWater"  id=""/ onchange="carregar()"></td>
+						<td><input type="radio" name="chartRadio" class="radioWater"  id=""/onchange="carregar()"></td>
+						<td></td>
+
+					</tr>
+
+				</table>
+
+				<table id="tabelaMonitorQualidadeAgua">
+					<thead>						
+						<tr>						
+							<th>PH </th>
+							<th>Amonia </th>
+							<th>Nitrato </th>
+							<th>Nitrito </th>
+							<th>Temperatura </th>
+							<th>Oxigenio </th>
+							<th>GH -Dureza </th>
+							<th>Data </th>
+						</tr>						
+						<!--<tr>
+							<th>0.0</th>
+							<th>ppm</th>
+							<th>ppm</th>
+							<th>ppm</th>
+							<th>ºC</th>
+							<th>ppm</th>
+							<th>ppm</th>
+							<th>data e hora</th>
+						</tr>-->
+					</thead>
+					<tbody>
+						<tr>
+							<td>7.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>3</td>
+							<td>2018-08-27T06:34:17.985Z</td>
+						</tr>
+						<tr>
+							<td>7.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>2</td>
+							<td>2018-08-27T12:39:09.625Z</td>
+						</tr>
+						<tr>
+							<td>7.0</td>
+							<td>1</td>
+							<td>40</td>
+							<td>0</td>
+							<td>27</td>
+							<td>5</td>
+							<td>1</td>
+							<td>2018-08-27T21:39:09.625Z</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section class="container">
+				<h2 id="titulo-form">Adicionar Monitoramento de qualidade dAgua</h2>
+				
+				<ul id="lista-erros"></ul>
+
+				<form id="adcionar-qualidade-agua">
+					<div class="grupo">
+						<label for="ph">PH: Potencial Hidrogenio</label>
+						<input id="" type="text" name="ph" placeholder="0.0" type="number">
+					</div>
+					<div class="grupo">
+						<label for="amonia">Amonia</label>
+						<input id="" type="text" name="amonia" placeholder="ppm" type="number">
+					</div>
+					<div class="grupo">
+						<label for="nitrato">Nitrato</label>
+						<input id="" type="text" name="nitrato" placeholder="ppm" type="number">
+					</div>
+					<div class="grupo">
+						<label for="nitrito">Nitrito</label>
+						<input id="" type="text" name="nitrito" placeholder="ppm" type="number">
+					</div>
+					<div class="grupo">
+						<label for="temperatura">Temperatura</label>
+						<input id="" type="text" name="temperatura" placeholder="ºC" type="number">
+					</div>
+					<div class="grupo">
+						<label for="oxigenio">Oxigenio</label>
+						<input id="" type="text" name="oxigenio" placeholder="ppm" type="number">
+					</div>
+					<div class="grupo">
+						<label for="gh">GH Dureza</label>
+						<input id="" type="text" name="gh" placeholder="ppm" type="number">
+					</div>
+
+					<button id="adicionar-qualidadeDagua" class= "botao bto-principal">Adicionar</button>
+
+				</form>
+			</section>
+
+			<section class="container">
+				<h2>Nutrientes</h2>
+				<table>
+					<thead>
+						<tr>
+							<th colspan="3" rowspan="2">Organicos - não minerais</th>
+							<th colspan="6">Minerais</th>							
+							<th colspan="7" rowspan="2">Micronutrientes</th>
+						</tr>
+						<tr>
+							
+							<th colspan="3"> Primários - NPK </th>
+							<th colspan="3">Secundarios</th>
+							
+						</tr>
+						<tr>
+							<th>Oxigenio</th>
+							<th>Hidrogenio</th>
+							<th>Carbono</th>
+
+							<th>Nitrogenio</th>
+							<th>Postassio</th>
+							<th>Fosforo</th>
+
+							<th>Calcio</th>
+							<th>Magnesio</th>							
+							<th>Enxofre</th>
+
+							<th>Ferro</th>
+							<th>Cobre</th>
+							<th>Zinco</th>
+							<th>Manganes</th>
+							<th>Boro</th>
+							<th>Molibdênio</th>
+							<th>Cloro</th>
+
+						</tr>
+						<tr>
+							<th>O</th>
+							<th>H</th>
+							<th>C</th>
+
+							<th>N</th>
+							<th>P</th>
+							<th>K*</th>
+
+							<th>Ca*</th>
+							<th>Mg*</th>
+							<th>S</th>
+
+							<th>Fe**</th>
+							<th>Cu</th>
+							<th>Zn</th>
+							<th>Mn</th>
+							<th>B</th>
+							<th>Mo</th>
+							<th>Cl</th>
+						</tr>
+
+					</thead>
+				</table>
+				<p>*  Elementos que não interagem muito bem entre si, dificil de gerenciar.</p>
+				<br>
+				<p>** Deficiencia de ferro causa problemas no sistema de aquaponia é necessário suplementação adicional com EDHHA (Quelato de ferro) .</p>
+				<br>
+				<p>Os peixes, os microrganismos beneficos do sistema e o meio ambiente fornecem 13 de 16 nutrientes necessários para plantas; com kit de hidroponia devem ser suplementados, o ferro (EDDHA), calcio, magnesio.</p>
+			</section>
+			
+
+
+			<section class="container">
+				<h2>Organicos</h2>
+
+			</section>
+
+
+
+			<section class="container">
+				<h2>Minerais Primarios</h2>
+
+			</section>
+
+			<section class="container">
+				<h2>Minerais Secundários</h2>
+
+			</section>
+
+
+			<section class="container">
+				<h2>Micronutrientes</h2>
+
+			</section>
+
+			<section class="container">
+				<h2>Peixes</h2>
+
+			</section>
+
+			<section class="container">
+				<h2>Plantas</h2>
+
+			</section>
+
+			<section class="container">
+				<header><h1>Calculadoras</h1></header>
+				
+
+				<h2>Numero de peixes e plantas</h2>
+				<ul>
+					<li>-O volume dAgua do tanque define o quantidade de peixes possives</li>
+					<li>-Equipamentos instalados como areador e oxigenador aumentam essa quantidade</li>
+					<li>-Dependendo da linha de estudo, essa quantidade pode ser 30 a 40kg /m3; ou então 27 ou 50 litros por kg de peixe</li>
+					<li>-O peso da biomassa define a quantidade de ração</li>
+					<li>-A quantidade de ração flutuante e biomassa define a quantidade de plantas aproximadamente</li>
+					<li>-Essa quantidade pode ser definida em: 6m2 de folhosas / 10kg peixes ou 4m2 de canteiros para tomateiros.</li>
+					<li>-Outra forma de calcular é 20 pés de folhosas (1m2), 5 pés por kg de peixe, ou 25 mudas.</li>
+					<li>-Alevinos consomem 7% do seu peso corporal em ração ao dia. Para animais adultos esse valor é 1.5%</li>
+				</ul>
+				
+				<form>
+					<div class="grupo">
+						<label for="kgPeixe">Peixes em quilograma (kg)</label>
+						<input id="kgPeixe" type="number" name="kgPeixe" placeholder="10" >
+					</div>
+					<div class="grupo">
+						<label for="plantas">Plantas</label>
+						<input id="plantas" type="number" name="rlantas" placeholder="100" >
+					</div>
+					<div class="grupo">
+						<label for="reservatorio">Reservatorio</label>
+						<input id="reservatorio" type="number" name="reservatorio" placeholder="1000">
+					</div>
+				</form>
+
+					<table id="tabelaPeixesPlantas">
+						<tr><th>kg de peixes no reservatorio:</th><td> <span id="resKgPeixe"></span> </td></tr>
+						<tr><th>ração por dia (kg):</th><td> <span id="resRacaoDia"></span> </td></tr>
+						<tr><th>ração por mês:</th><td> <span id="resRacaoMes"> </span> </td></tr>
+						<tr><th>ração por ano:</th><td> <span id="resRacaoAno"> </span> </td></tr>
+						<tr><th>Volume dAgua do tanque minimo:</th><td> <span id="resMinM3"> </span> </td></tr>
+						<tr><th>Volume dAgua do tanque sem equipamentos:</th><td> <span id="resMedM3"> </span> </td></tr>
+						<tr><th>cultivo berçario:</th><td> <span id="resQtyMudas"></span> </td></tr>
+						<tr><th>cultivo folhosas:</th><td> <span id="resQtyFolhosas"></span> </td></tr>
+						<tr><th>cultivo especies exigentes:</th><td> <span id="resQtyTomates"></span> </td></tr>
+					</table>					
+
+				<h2>Calculadora mesas de cultivo (NFT)</h2>
+				<form>
+					<div class="grupo">
+						<label for="entreEixos">Entre Eixos Posições de Cutivo dos Perfis:</label>
+						<input id="entreEixos" type="number" name="entreEixo" placeholder="0.25 m" value="0.25">
+					</div>
+					<div class="grupo">
+						<label for="larguraMesa">Largura da Mesa de Cultivo:</label>
+						<input id="larguraMesa" type="number" name="larguraMesa" placeholder="1.5 m" value="1.5">
+					</div>
+					<div class="grupo">
+						<label for="comprimentoMesa">Comprimento da Mesa de Cultivo:</label>
+						<input id="comprimentoMesa" type="number" name="comprimentoMesa" placeholder="6 m" value="6">
+					</div>
+					<div class="grupo">
+						<label for="larguraPerfil">Largura do Perfil:</label>
+						<input id="larguraPerfil" type="number" name="larguraPerfil" placeholder="0.1 m" value="0.1">
+					</div>
+					<div class="grupo">
+						<label for="espacamentoPerfil">Espaçamento entre Perfil de cultivo:</label>
+						<input id="espacamentoPerfil" type="number" name="espacamentoPerfil" placeholder="0.1 m" value="0.1">
+					</div> 
+					<div class="grupo">
+						<label for="nPosicoesCultivo">Numero de posicoes de cultivos desejados:</label>
+						<input id="nPosicoesCultivo" type="number" name="nPosicoesCultivo" placeholder="500" value="500">
+					</div>
+					<div class="grupo">
+						<label for="mesasLaterais">Numero de mesas em lateral desejadas:</label>
+						<input id="mesasLaterais" type="number" name="mesasLaterais" placeholder="1" value="1">
+					</div>
+					<button id="calcularMesas" class="botao bto-principal">Calcular</button>
+				</form>
+
+				<table>
+					<tr><th>Area Parcial: </th><td><span id="resAreaParcial"></span></td></tr>
+					<tr><th>#Metros de Perfis: </th><td><span id="resMetrosPerfis"></span></td></tr>
+					<tr><th>#Perfis por mesa: </th><td><span id="resPerfisMesa"></span></td></tr>
+					<tr><th>#Cultivos por mesa: </th><td><span id="resCultivosMesa"></span></td></tr>
+					<tr><th>#Mesas necessárias: </th><td><span id="resMesas"></span></td></tr>
+					<tr><th>Largura Total com area passagem: </th><td><span id="areaTotal"></span></td></tr>
+				</table>
+
+			</section>
+
+		</main>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+
+
+		<script src="js/calculadoraPeixesPlantas.js"></script>
+		<script src="js/calculadoraMesas.js"></script>
+		<script src="js/addRowWater.js"></script>
+
+
+
+
+		
+		<script type="text/javascript" src="js/graficos.js"></script>
+		
+		<script>
+				google.charts.load('current', {'packages':['corechart'], 'language': 'pt'});
+				google.charts.setOnLoadCallback(desenhaGraficos);
+		</script>
+
+	</body>
+</html>
+
+
+
